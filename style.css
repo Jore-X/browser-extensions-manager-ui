@@ -89,6 +89,14 @@ main {
   padding: 28px 8%;
 }
 
+label {
+  cursor: pointer;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .logo-and-mode {
   display: flex;
   align-items: center;
@@ -109,6 +117,8 @@ main {
 }
 .logo > img {
   width: 80%;
+  height: 80%;
+  max-height: 42px;
 }
 .dark-light-label {
   display: flex;
@@ -119,6 +129,11 @@ main {
   padding: 6px;
   border-radius: 8px;
   border: none;
+
+  transition: filter 0.4s ease;
+}
+.dark-light-label:hover {
+  filter: brightness(1.5);
 }
 .dark-light-label > img {
   transition: opacity 0.4s ease;
@@ -168,8 +183,13 @@ body.dark-mode .logo > .dark {
   transition:
     background var(--transition-mode-time, 0.4s)
       var(--transition-mode-effect, ease),
-    color var(--transition-mode-time, 0.4s) var(--transition-mode-effect, ease);
+    color var(--transition-mode-time, 0.4s) var(--transition-mode-effect, ease),
+    filter 0.4s ease;
 }
+.header-extensions > .options > label:hover {
+  filter: brightness(1.5);
+}
+
 .header-extensions > .options > input {
   display: none;
 }
@@ -228,20 +248,73 @@ body.dark-mode .logo > .dark {
   padding: 0 8px;
 }
 .btn-remove {
-  color: var(--color-1-2);
+  cursor: pointer;
+
   font-size: 0.75rem;
   padding: 7px 14px;
+  color: var(--color-1-2);
   background: transparent;
   border: 2px solid var(--color-3-1);
   border-radius: 15px;
   transition:
     background 0.4s ease,
     border var(--transition-mode-time, 0.4s) var(--transition-mode-effect, ease),
-    color var(--transition-mode-time, 0.4s) var(--transition-mode-effect, ease);
+    color var(--transition-mode-time, 0.4s) var(--transition-mode-effect, ease),
+    box-shadow var(--transition-mode-time, 0.4s)
+      var(--transition-mode-effect, ease);
 }
 .btn-remove:hover {
-  background: var(--Red-500);
+  background: var(--Red-700);
+  border-color: var(--Red-500);
+  box-shadow:
+    0 0 1px var(--Red-700),
+    0 0 2px var(--Red-700),
+    0 0 25px var(--Red-700);
 }
+
+#modal_remove {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  padding: 24px;
+  border-radius: 15px;
+
+  background: var(--color-2-1);
+  border: 2px solid var(--color-3-1);
+  color: var(--color-4-2);
+}
+#modal_remove > .btns-modal {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 24px;
+}
+.btns-modal > * {
+  /* user-select: none; */
+  cursor: pointer;
+
+  padding: 5px 10px;
+  border-radius: 14px;
+
+  color: var(--color-1-2);
+  background: var(--color-3-1);
+  border: 2px solid var(--color-4-1);
+
+  transition: filter 0.4s ease;
+}
+
+.btns-modal > *:hover {
+  filter: brightness(1.5);
+}
+
+.btns-modal > #confirm_remove {
+  background: var(--Red-400);
+  border-color: var(--Red-500);
+  color: var(--color-1-1);
+  font-weight: 600;
+}
+
 .toggle-label {
   user-select: none;
   display: inline-block;
@@ -253,6 +326,12 @@ body.dark-mode .logo > .dark {
   border-radius: 50px;
 
   transition: all 0.5s;
+}
+.toggle-label:hover {
+  box-shadow:
+    0 0 1px hsl(0, 0%, 78%),
+    0 0 2px hsl(0, 0%, 78%),
+    0 0 15px hsl(0, 0%, 78%);
 }
 .toggle-label::before {
   position: absolute;
@@ -270,6 +349,12 @@ body.dark-mode .logo > .dark {
 .toggle-input:checked + .toggle-label {
   background: var(--Red-400);
 }
+.toggle-input:checked + .toggle-label:hover {
+  box-shadow:
+    0 0 1px var(--Red-700),
+    0 0 2px var(--Red-700),
+    0 0 15px var(--Red-700);
+}
 .toggle-input:checked + .toggle-label::before {
   left: 50%;
 }
@@ -281,7 +366,7 @@ body.dark-mode .logo > .dark {
 
 @media screen and (max-width: 480px) {
   .logo > img {
-    width: 40%;
+    width: 120px;
   }
   .header-extensions {
     gap: 10px;

@@ -2,6 +2,27 @@ const container = document.querySelector(".box-grid");
 let radio_value = "all";
 let extensions_data, extensions_actives, extensions_inactives;
 
+// _______________________________________________________________
+
+const modal_remove = document.getElementById("modal_remove");
+const confirm_remove = document.getElementById("confirm_remove");
+const close_modal = document.getElementById("close_modal");
+let last_index_remove;
+// _______________________________________________________________
+
+confirm_remove.addEventListener("click", () => {
+  modal_remove.close();
+
+  extensions_data.splice(last_index_remove, 1);
+  reload_cards();
+});
+// _______________________________________________________________
+
+close_modal.addEventListener("click", () => {
+  modal_remove.close();
+});
+// _______________________________________________________________
+
 async function load_data() {
   try {
     const response = await fetch("./data.json");
@@ -23,9 +44,13 @@ function dynamic_cards(data) {
     clone.querySelector(".title").textContent = extension.name;
     clone.querySelector(".text").textContent = extension.description;
 
-    clone
-      .querySelector(".btn-remove")
-      .setAttribute("data-extension-index", index);
+    const btn_remove = clone.querySelector(".btn-remove");
+    btn_remove.setAttribute("data-extension-index", index);
+
+    btn_remove.addEventListener("click", () => {
+      last_index_remove = index;
+      modal_remove.showModal();
+    });
 
     const checkbox = clone.querySelector(".toggle-input");
     const label = clone.querySelector(".toggle-label");
@@ -55,7 +80,7 @@ function dynamic_cards(data) {
   container.appendChild(fragment);
 }
 
-function reload_cards(radio_value) {
+function reload_cards() {
   extensions_actives = extensions_data.filter((item) => {
     return item.isActive === true;
   });
@@ -89,7 +114,7 @@ radios_list_extensions.forEach((radio) => {
 
 load_data().then((data) => {
   extensions_data = data;
-  reload_cards(radio_value);
+  reload_cards();
 });
 
 const input_mode = document.querySelector("#dark_light_input");
