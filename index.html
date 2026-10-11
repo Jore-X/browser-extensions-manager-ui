@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 0.6875rem;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="logo-and-mode">
+        <div class="logo dark">
+          <img
+            src="./assets/images/logo-for-dark.svg"
+            alt="Logo"
+            class="light"
+          />
+          <img
+            src="./assets/images/logo-for-light.svg"
+            alt="Logo"
+            class="dark"
+          />
+        </div>
+        <input type="checkbox" id="dark_light_input" style="display: none" />
+        <label for="dark_light_input" class="dark-light-label">
+          <img
+            src="./assets/images/icon-sun.svg"
+            alt="Modo Claro"
+            class="light"
+          />
+          <img
+            src="./assets/images/icon-moon.svg"
+            alt="Modo Escuro"
+            class="dark"
+          />
+        </label>
+      </div>
+      <div class="header-extensions">
+        <h2 class="title">Extensions List</h2>
+        <div class="options">
+          <input
+            type="radio"
+            id="all"
+            name="list-extensions"
+            value="all"
+            checked=""
+          />
+          <label for="all">All</label>
+          <input
+            type="radio"
+            id="active"
+            name="list-extensions"
+            value="actives"
+          />
+          <label for="active">Active</label>
+          <input
+            type="radio"
+            id="inactive"
+            name="list-extensions"
+            value="inactives"
+          />
+          <label for="inactive">Inactive</label>
+        </div>
+      </div>
+
+      <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+
+      <template id="extension_card">
+        <div class="extension-div">
+          <div class="info-box">
+            <div class="img">
+              <img class="logo-extension" src="" alt="logo for extension" />
+            </div>
+            <div class="info">
+              <h3 class="title"></h3>
+              <p class="text"></p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+            <input type="checkbox" class="toggle-input" style="display: none" />
+            <label for="toggle-input" class="toggle-label"></label>
+          </div>
+        </div>
+      </template>
+      <div class="box-grid">
+        <!-- <div class="extension-div">
+          <div class="info-box">
+            <div class="img"></div>
+            <div class="info">
+              <h3 class="title">StyleSpy</h3>
+              <p class="text">
+                Instantly analyze and copy CSS from any webpage element.
+              </p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+        <div class="extension-div">
+          <div class="info-box">
+            <div class="img"></div>
+            <div class="info">
+              <h3 class="title">SpeedBoost</h3>
+              <p class="text">
+                Optimizes browser resource usage to accelerate page loading.
+              </p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+        <div class="extension-div">
+          <div class="info-box">
+            <div class="img"></div>
+            <div class="info">
+              <h3 class="title">JSONWizard</h3>
+              <p class="text">
+                Formats, validates, and prettifies JSON responses in-browser.
+              </p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+        <div class="extension-div">
+          <div class="info-box">
+            <div class="img"></div>
+            <div class="info">
+              <h3 class="title">TabMaster Pro</h3>
+              <p class="text">
+                Organizes browser tabs into groups and sessions.
+              </p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+        <div class="extension-div">
+          <div class="info-box">
+            <div class="img"></div>
+            <div class="info">
+              <h3 class="title">ViewportBuddy</h3>
+              <p class="text">
+                Simulates various screen resolutions directly within the
+                browser.
+              </p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div>
+        <div class="extension-div">
+          <div class="info-box">
+            <div class="img"></div>
+            <div class="info">
+              <h3 class="title">Markup Notes</h3>
+              <p class="text">
+                Enables annotation and notes directly onto webpages for
+                collaborative debugging.
+              </p>
+            </div>
+          </div>
+          <div class="options">
+            <button class="btn-remove">Remove</button>
+          </div>
+        </div> -->
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Dheymerson Jore</a>.
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

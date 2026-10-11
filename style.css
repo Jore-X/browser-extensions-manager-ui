@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Neutral */
+
+  --Neutral-900: hsl(227, 75%, 14%);
+  --Neutral-800: hsl(226, 25%, 17%);
+  --Neutral-700: hsl(225, 23%, 24%);
+  --Neutral-600: hsl(226, 11%, 37%);
+  --Neutral-300: hsl(0, 0%, 78%);
+  --Neutral-200: hsl(217, 61%, 90%);
+  --Neutral-100: hsl(0, 0%, 93%);
+  --Neutral-0: hsl(200, 60%, 99%);
+
+  /* Red */
+
+  --Red-400: hsl(3, 86%, 64%);
+  --Red-500: hsl(3, 71%, 56%);
+  --Red-700: hsl(3, 77%, 44%);
+
+  /* Gradients */
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Noto Sans", sans-serif;
+  background: var(--dark-gradient);
+  color: var(--Neutral-300);
+  min-height: 100dvh;
+}
+main {
+  width: 100%;
+  height: 100%;
+  max-width: 1440px;
+  padding: 28px 8%;
+}
+
+.logo-and-mode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background: var(--Neutral-800);
+  color: var(--Neutral-100);
+}
+.logo {
+  width: 100%;
+}
+.logo > img {
+  width: 20%;
+}
+.dark-light-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  background: var(--Neutral-700);
+  padding: 6px;
+  border-radius: 8px;
+  border: none;
+}
+.dark-light-label > img {
+  transition: opacity 0.4s ease;
+}
+.dark-light-label > img,
+#dark_light_input:checked ~ .dark-light-label > .light {
+  display: none;
+}
+#dark_light_input ~ .dark-light-label > .light,
+#dark_light_input:checked + .dark-light-label > .dark {
+  display: flex;
+}
+
+.logo > img {
+  display: none;
+}
+.logo.dark > .light {
+  display: flex;
+}
+.logo.light > .dark {
+  display: flex;
+}
+
+.header-extensions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 12px 0;
+}
+
+.header-extensions > .options {
+  display: flex;
+  gap: 16px;
+}
+.header-extensions > .options > label {
+  user-select: none;
+  font-size: 0.9rem;
+  padding: 4px 16px;
+  background: var(--Neutral-700);
+  border-radius: 12px;
+  transition:
+    background 0.6s ease,
+    color 0.6s ease;
+}
+.header-extensions > .options > input {
+  display: none;
+}
+.header-extensions > .options > input:checked + label {
+  background: var(--Red-400);
+  color: var(--Neutral-900);
+}
+
+.box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+.extension-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150px;
+  gap: 4px;
+  padding: 12px;
+  background: var(--Neutral-800);
+  border-radius: 16px;
+  border: 1px solid var(--Neutral-600);
+}
+.info-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.info-box > .img > img {
+  width: 90%;
+}
+.info-box > .info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.info-box > .info > .title {
+  color: var(--Neutral-200);
+  font-size: 0.9rem;
+}
+.info-box > .info > .text {
+  color: var(--Neutral-300);
+  font-size: 0.75rem;
+}
+
+.extension-div > .options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+.btn-remove {
+  color: var(--Neutral-500);
+  font-size: 0.75rem;
+  padding: 7px 14px;
+  background: transparent;
+  border: 1px solid var(--Neutral-600);
+  border-radius: 15px;
+  transition: background 0.4s ease;
+}
+.btn-remove:hover {
+  background: var(--Red-500);
+}
+.toggle-input:checked + .toggle-label {
+  background: var(--Red-400);
+}
+.toggle-input:checked + .toggle-label::before {
+  left: 50%;
+}
+.toggle-label {
+  user-select: none;
+  display: inline-block;
+  position: relative;
+  background: var(--Neutral-600);
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+
+  transition: all 0.5s;
+}
+.toggle-label::before {
+  position: absolute;
+  content: "";
+  top: 5%;
+  left: 2px;
+  height: 90%;
+  aspect-ratio: 1/1;
+  background: var(--Neutral-100);
+  border-radius: 50px;
+
+  transition: all 0.5s;
+}
+
+@starting-style {
+  .dark-light-label > img {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo > img {
+    width: 40%;
+  }
+  .header-extensions {
+    gap: 10px;
+    flex-direction: column;
+  }
+}
