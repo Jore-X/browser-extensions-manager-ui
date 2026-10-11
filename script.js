@@ -38,10 +38,14 @@ function dynamic_cards(data) {
     checkbox.addEventListener("change", () => {
       if (event.target.checked) {
         extension.isActive = true;
-        reload_cards(radio_value);
+        // setTimeout(() => {
+        //   reload_cards(radio_value);
+        // }, 750);
       } else {
         extension.isActive = false;
-        reload_cards(radio_value);
+        // setTimeout(() => {
+        //   reload_cards(radio_value);
+        // }, 750);
       }
     });
 
@@ -86,4 +90,10 @@ radios_list_extensions.forEach((radio) => {
 load_data().then((data) => {
   extensions_data = data;
   reload_cards(radio_value);
+});
+
+const input_mode = document.querySelector("#dark_light_input");
+const body = document.querySelector("body");
+input_mode.addEventListener("change", () => {
+  body.classList.toggle("dark-mode");
 });
