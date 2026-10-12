@@ -8,11 +8,11 @@ O objetivo foi reproduzir uma interface responsiva para visualizar e gerenciar e
 
 ### Versão desktop
 
-![Versão desktop do projeto](./screenshots/captura-tela-desktop-b.png)
+<img src="./screenshots/captura-tela-desktop-b.png" alt="Versão desktop do projeto" width="700">
 
 ### Versão mobile
 
-![Versão mobile do projeto](./screenshots/captura-tela-mobile-w.webp)
+<img src="./screenshots/captura-tela-mobile-w.webp" alt="Versão mobile do projeto" width="300">
 
 ## Demonstração
 
@@ -22,19 +22,19 @@ Acesse a versão publicada do projeto:
 
 ## Funcionalidades
 
-* **Filtragem de extensões:** visualização de todas as extensões ou filtragem por estado.
-* **Ativação e desativação:** alteração do estado das extensões pela interface.
-* **Remoção de extensões:** remoção de itens da lista.
-* **Tema claro e escuro:** alternância entre os temas disponíveis.
-* **Layout responsivo:** interface adaptada para diferentes tamanhos de tela.
-* **Interatividade:** controles e elementos interativos para facilitar o uso da interface.
+- **Filtragem de extensões:** visualização de todas as extensões ou filtragem por estado.
+- **Ativação e desativação:** alteração do estado das extensões pela interface.
+- **Remoção de extensões:** remoção de itens da lista.
+- **Tema claro e escuro:** alternância entre os temas disponíveis.
+- **Layout responsivo:** interface adaptada para diferentes tamanhos de tela.
+- **Interatividade:** controles e elementos interativos para facilitar o uso da interface.
 
 ## Tecnologias utilizadas
 
-* **HTML5:** estruturação do conteúdo.
-* **CSS3:** estilização e adaptação para diferentes dispositivos.
-* **JavaScript:** implementação das funcionalidades e interações.
-* **JSON:** organização dos dados utilizados para exibir as extensões.
+- **HTML5:** estruturação do conteúdo.
+- **CSS3:** estilização e adaptação para diferentes dispositivos.
+- **JavaScript:** implementação das funcionalidades e interações.
+- **JSON:** organização dos dados utilizados para exibir as extensões.
 
 ## Como executar localmente
 
@@ -64,8 +64,8 @@ Este projeto foi desenvolvido com o propósito de praticar e aprimorar habilidad
 
 **Jore-X**
 
-* [GitHub](https://github.com/Jore-X)
-* [Repositório deste projeto](https://github.com/Jore-X/browser-extensions-manager-ui-main)
+- [GitHub](https://github.com/Jore-X)
+- [Repositório deste projeto](https://github.com/Jore-X/browser-extensions-manager-ui-main)
 
 ## Créditos
 
