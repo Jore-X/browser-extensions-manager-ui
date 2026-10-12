@@ -166,6 +166,7 @@ body.dark-mode .logo > .dark {
 }
 
 .header-extensions > .title {
+  font-size: 1.6rem;
   color: var(--color-1-2);
 }
 
