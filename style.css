@@ -200,7 +200,7 @@ body.dark-mode .logo > .dark {
 
 .box-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 10px;
 }
 .extension-div {
@@ -358,6 +358,16 @@ body.dark-mode .logo > .dark {
 .toggle-input:checked + .toggle-label::before {
   left: 50%;
 }
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+
 @starting-style {
   .dark-light-label > img {
     opacity: 0;

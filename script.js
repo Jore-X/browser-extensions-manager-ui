@@ -33,6 +33,8 @@ async function load_data() {
     return await response.json();
   } catch (error) {
     console.error("Erro ao carregar o JSON: ", error);
+    const empty_response = [];
+    return empty_response;
   }
 }
 function dynamic_cards(data) {
@@ -53,7 +55,6 @@ function dynamic_cards(data) {
 
     btn_remove.addEventListener("click", () => {
       last_extension_remove = extension.name;
-      console.log(extension.name);
       modal_remove.showModal();
     });
 
@@ -65,11 +66,17 @@ function dynamic_cards(data) {
 
     checkbox.checked = extension.isActive;
 
-    checkbox.addEventListener("change", () => {
+    checkbox.addEventListener("change", (event) => {
       if (event.target.checked) {
         extension.isActive = true;
+        setTimeout(() => {
+          reload_cards();
+        }, 500);
       } else {
         extension.isActive = false;
+        setTimeout(() => {
+          reload_cards();
+        }, 500);
       }
     });
 
@@ -102,7 +109,7 @@ const radios_list_extensions = document.querySelectorAll(
 );
 
 radios_list_extensions.forEach((radio) => {
-  radio.addEventListener("change", () => {
+  radio.addEventListener("change", (event) => {
     if (event.target.checked) {
       radio_value = radio.value;
       console.log(radio_value);
