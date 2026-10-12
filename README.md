@@ -18,7 +18,7 @@ O objetivo foi reproduzir uma interface responsiva para visualizar e gerenciar e
 
 Acesse a versão publicada do projeto:
 
-**[Visualizar projeto online](https://jore-x.github.io/browser-extensions-manager-ui-main/)**
+**[Visualizar projeto online](https://jore-x.github.io/browser-extensions-manager-ui/)**
 
 ## Funcionalidades
 
@@ -65,7 +65,7 @@ Este projeto foi desenvolvido com o propósito de praticar e aprimorar habilidad
 **Jore-X**
 
 - [GitHub](https://github.com/Jore-X)
-- [Repositório deste projeto](https://github.com/Jore-X/browser-extensions-manager-ui-main)
+- [Repositório deste projeto](https://github.com/Jore-X/browser-extensions-manager-ui)
 
 ## Créditos
 
