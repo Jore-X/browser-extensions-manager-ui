@@ -4,6 +4,16 @@ Projeto desenvolvido como solução para o desafio **Browser Extensions Manager 
 
 O objetivo foi reproduzir uma interface responsiva para visualizar e gerenciar extensões, praticando conceitos de desenvolvimento front-end com HTML, CSS e JavaScript.
 
+## Capturas de tela
+
+### Versão desktop
+
+![Versão desktop do projeto](./screenshots/captura-tela-desktop-b.png)
+
+### Versão mobile
+
+![Versão mobile do projeto](./screenshots/captura-tela-mobile-w.webp)
+
 ## Demonstração
 
 Acesse a versão publicada do projeto:
