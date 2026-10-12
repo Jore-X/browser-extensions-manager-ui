@@ -43,13 +43,13 @@ Não é necessário instalar dependências para executar a versão estática do 
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/Jore-X/browser-extensions-manager-ui-main.git
+   git clone https://github.com/Jore-X/browser-extensions-manager-ui.git
    ```
 
 2. Entre na pasta do projeto:
 
    ```bash
-   cd browser-extensions-manager-ui-main
+   cd browser-extensions-manager-ui
    ```
 
 3. Abra o arquivo `index.html` no navegador.

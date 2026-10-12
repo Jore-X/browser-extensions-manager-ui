@@ -7,13 +7,17 @@ let extensions_data, extensions_actives, extensions_inactives;
 const modal_remove = document.getElementById("modal_remove");
 const confirm_remove = document.getElementById("confirm_remove");
 const close_modal = document.getElementById("close_modal");
-let last_index_remove;
+let last_extension_remove;
 // _______________________________________________________________
 
 confirm_remove.addEventListener("click", () => {
   modal_remove.close();
 
-  extensions_data.splice(last_index_remove, 1);
+  for (let i = 0; i < extensions_data.length; i++) {
+    if (extensions_data[i].name === last_extension_remove) {
+      extensions_data.splice(i, 1);
+    }
+  }
   reload_cards();
 });
 // _______________________________________________________________
@@ -48,7 +52,8 @@ function dynamic_cards(data) {
     btn_remove.setAttribute("data-extension-index", index);
 
     btn_remove.addEventListener("click", () => {
-      last_index_remove = index;
+      last_extension_remove = extension.name;
+      console.log(extension.name);
       modal_remove.showModal();
     });
 
@@ -63,14 +68,8 @@ function dynamic_cards(data) {
     checkbox.addEventListener("change", () => {
       if (event.target.checked) {
         extension.isActive = true;
-        // setTimeout(() => {
-        //   reload_cards(radio_value);
-        // }, 750);
       } else {
         extension.isActive = false;
-        // setTimeout(() => {
-        //   reload_cards(radio_value);
-        // }, 750);
       }
     });
 
